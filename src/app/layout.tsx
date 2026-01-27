@@ -12,11 +12,11 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Sea Mirror Villa | Lamar Development",
+  title: "Sea Mirror Residence | Lamar Development",
   description:
-    "Sea Mirror in Jumeirah Bay Island by Lamar Development, Dubai is a project that offers 4, and 5-bedrooms penthouses with modern interiors & amenities. Contact us to get more info",
+    "Sea Mirror Residence in Jumeirah 2 by Lamar Development, Dubai is a project that offers 4, and 5-bedrooms penthouses with modern interiors & amenities. Contact us to get more info",
   keywords: [
-    "Sea Mirror Villa",
+    "Sea Mirror Residence",
     "Sea Mirror in Jumeirah",
     "Lamar Development",
     "Dubai project",
@@ -26,36 +26,34 @@ export const metadata: Metadata = {
     "luxury accommodation",
     "wellness retreat",
   ],
-  authors: [{ name: "Sea Mirror Villa | Lamar Development" }],
-  creator: "Sea Mirror Villa | Lamar Development",
-  publisher: "Sea Mirror Villa | Lamar Development",
-  alternates: { canonical: "https://seamirrordubai.com/" },
+  authors: [{ name: "Sea Mirror Residences | Lamar Development" }],
+  creator: "Sea Mirror Residences | Lamar Development",
+  publisher: "Sea Mirror Residences | Lamar Development",
+  alternates: { canonical: "https://seamirrorresidence.com/" },
   openGraph: {
-    title: "Sea Mirror Villa | Lamar Development",
+    title: "Sea Mirror Residences | Lamar Development",
     description:
-      "Sea Mirror in Jumeirah Bay Island by Lamar Development, Dubai is a project that offers 4, and 5-bedrooms penthouses with modern interiors & amenities. Contact us to get more info",
+      "Sea Mirror Residences in Jumeirah 2 by Lamar Development, Dubai is a project that offers 4, and 5-bedrooms penthouses with modern interiors & amenities. Contact us to get more info",
     url: "",
-    siteName: "Sea Mirror Villa",
+    siteName: "Sea Mirror Residences",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://seamirrordubai.com/sea-mirror.jpg",
+        url: "https://seamirrorresidence.com/residence/3.jpg",
         width: 1200,
         height: 630,
-        alt: "Sea Mirror Villa | Lamar Development",
+        alt: "Sea Mirror Residences | Lamar Development",
       },
     ],
   },
-  verification: {
-    google: "rDq_dsst5U9vAcdJVndgamAtWP1veWeA0YvyVhcWjs8",
-  },
+
   twitter: {
     card: "summary_large_image",
-    title: "Sea Mirror Villa | Lamar Development",
+    title: "Sea Mirror Residences | Lamar Development",
     description:
-      "Sea Mirror in Jumeirah Bay Island by Lamar Development, Dubai is a project that offers 4, and 5-bedrooms penthouses with modern interiors & amenities. Contact us to get more info",
-    images: ["https://seamirrordubai.com/sea-mirror.jpg"],
+      "Sea Mirror Residences in Jumeirah 2 by Lamar Development, Dubai is a project that offers 4, and 5-bedrooms penthouses with modern interiors & amenities. Contact us to get more info",
+    images: ["https://seamirrorresidence.com/residence/3.jpg"],
   },
   robots: {
     index: true,
@@ -67,6 +65,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  verification: {
+    google: "ghuV1cBkUvd7r8uY9r1dFlxTai0RM5DIXluia1Ojp8s",
   },
 };
 
@@ -84,19 +85,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-FSSFC40DL0"
+        src="https://www.googletagmanager.com/gtag/js?id=G-P832RB78K6"
         strategy="afterInteractive"
       />
 
       <Script id="google-analytics" strategy="afterInteractive">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-FSSFC40DL0', {
-            page_path: window.location.pathname,
-          });
-        `}
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-P832RB78K6');
+          `}
       </Script>
 
       <body className={`${poppins.variable} font-sans antialiased`}>

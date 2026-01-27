@@ -24,7 +24,7 @@ export default function Home() {
           {/* Background image */}
           <div
             className="absolute inset-0 bg-fixed bg-center bg-cover"
-            style={{ backgroundImage: "url('/sea-mirror-villa/37.jpg')" }}
+            style={{ backgroundImage: "url('/residence/3.jpg')" }}
             role="img"
             aria-label="Iconic Burj Al Arab hotel in Dubai"
           />
@@ -36,8 +36,8 @@ export default function Home() {
           <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
             <div className="max-w-3xl">
               <h2 className="text-lg sm:text-3xl lg:text-4xl font-light text-white mb-4">
-                An architectural reverie encased in oxidized copper reflects the
-                ocean’s infinity and unveils a tale of timeless elegance
+                Nestled along the Dubai Water Canal with impressive views of the
+                canal, sea, and Dubai Skyline
               </h2>
             </div>
           </div>
@@ -51,7 +51,7 @@ export default function Home() {
           {/* Background image */}
           <div
             className="absolute inset-0 bg-fixed bg-center bg-cover"
-            style={{ backgroundImage: "url('/sea-mirror-villa/19.jpg')" }}
+            style={{ backgroundImage: "url('/residence/2.jpg')" }}
             role="img"
             aria-label="Iconic Burj Al Arab hotel in Dubai"
           />
@@ -63,9 +63,9 @@ export default function Home() {
           <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
             <div className="max-w-3xl">
               <h2 className="text-lg sm:text-3xl lg:text-4xl font-light text-white mb-4">
-                Golden mashrabiyas encase majestic architectural dimensions to
-                create blissfully shaded interiors against the azure backdrop of
-                the Arabian sky
+                The entertaining spaces of Sea Mirror Residences beckon with
+                sprawling elegance, inviting moments of shared indulgence and
+                cherished memories
               </h2>
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function Home() {
           {/* Background image */}
           <div
             className="absolute inset-0 bg-fixed bg-center bg-cover"
-            style={{ backgroundImage: "url('/sea-mirror-villa/49.jpg')" }}
+            style={{ backgroundImage: "url('/residence/11.jpg')" }}
             role="img"
             aria-label="Iconic Burj Al Arab hotel in Dubai"
           />
@@ -89,9 +89,9 @@ export default function Home() {
           <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
             <div className="max-w-3xl">
               <h2 className="text-lg sm:text-3xl lg:text-4xl font-light text-white mb-4">
-                An inspired architectural haven that seamlessly blends the
-                interior and the exterior to create a secluded verdant oasis
-                that gazes towards the ocean and Dubai’s skyline
+                A design masterpiece blending natural elements with the richest
+                of earth’s materials - wood, glass, and concrete unite to create
+                a harmonious sanctuary
               </h2>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function Home() {
           {/* Background image */}
           <div
             className="absolute inset-0 bg-fixed bg-center bg-cover"
-            style={{ backgroundImage: "url('/sea-mirror-villa/43.jpg')" }}
+            style={{ backgroundImage: "url('/residence/1.jpg')" }}
             role="img"
             aria-label="Iconic Burj Al Arab hotel in Dubai"
           />
@@ -116,9 +116,8 @@ export default function Home() {
           <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
             <div className="max-w-3xl">
               <h2 className="text-lg sm:text-3xl lg:text-4xl font-light text-white mb-4">
-                A monolithic marble base dissolves into elegant wooden verticals
-                to reveal a home of unquestionable architectural prowess with
-                stunning views of the Dubai skyline and sea
+                Attention to detail is at the core of this development where
+                sustainable, modern design meets ultra high-end finishes.
               </h2>
             </div>
           </div>

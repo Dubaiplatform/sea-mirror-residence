@@ -7,29 +7,29 @@ import { motion } from "framer-motion";
 
 const nearbyLocations = [
   {
-    title: "Downtown Dubai",
-    distance: "10 mints",
+    title: "Jumeirah Beach",
+    distance: "5 mints",
   },
   {
-    title: "City walk",
+    title: "Burj Khalifa",
     distance: "12 mints",
   },
   {
     title: "Dubai International Airport",
-    distance: "15 mints",
+    distance: "20 mints",
   },
 
   {
     title: "Burj Al Arab",
-    distance: "22 mints",
+    distance: "26 mints",
   },
   {
     title: "Palm Jumeirah",
-    distance: "25 mints",
+    distance: "32 mints",
   },
   {
     title: "Dubai Marina",
-    distance: "27 mints",
+    distance: "35 mints",
   },
 ];
 
@@ -80,20 +80,6 @@ export function Area() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            {/* <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              whileInView={{ scale: 1, rotate: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: 0.2,
-                type: "spring",
-                stiffness: 120,
-              }}
-            >
-              <Quote className="w-12 h-12 text-primary mb-8" />
-            </motion.div> */}
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -111,10 +97,8 @@ export function Area() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                Internationally renowned architects, Jacobsen Arquitetura and
-                Studio MK27 have collaborated with interior designer Patricia
-                Urquiola, to create 18 distinct homes on Jumeira Bay Island. Sea
-                Mirror combines modernist architecture with nature
+                Sea Mirror Dubai is located on Jumeirah Bay Island, offering
+                residents a rare blend of exclusivity and accessibility.
               </motion.p>
             </blockquote>
 
@@ -252,7 +236,7 @@ export function Area() {
 
             {/* Google Map */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7219.272386346174!2d55.22776389617208!3d25.21548856079673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4224b9ae1753%3A0x4a52a3de40813f98!2sJumeirah%20Bay!5e0!3m2!1sen!2sae!4v1769503093921!5m2!1sen!2sae"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.203058536395!2d55.234311176215655!3d25.196373777711543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43003e204219%3A0x96d72763a2590d82!2sSea%20Mirror!5e0!3m2!1sen!2sae!4v1769515977685!5m2!1sen!2sae"
               width="100%"
               height="100%"
               loading="lazy"

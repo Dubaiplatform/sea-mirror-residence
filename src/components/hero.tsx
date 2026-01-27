@@ -17,7 +17,7 @@ export function Hero() {
         style={{ transform: "translateZ(0)" }}
       >
         <Image
-          src="/sea-mirror.jpg"
+          src="/residence/9.jpg"
           alt="Harbour Resort - Luxury estate surrounded by lush green landscape"
           fill
           priority
@@ -43,7 +43,7 @@ export function Hero() {
         >
           Sea Mirror
           <br />
-          <span>Villa</span>
+          <span>Residence</span>
         </motion.h1>
 
         <motion.p
@@ -52,8 +52,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          18 completely unique architectural masterpieces. Located on Dubai’s
-          most exclusive waterfront
+          A waterfront penthouse community that harmonises apartment living with
+          the highest standards of architecture, design and amenities
         </motion.p>
 
         <motion.div

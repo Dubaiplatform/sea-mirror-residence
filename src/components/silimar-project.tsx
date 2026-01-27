@@ -14,18 +14,23 @@ const offerings = [
     title: "Sea Mirror Residence",
     location: "Jumeirah Bay Island",
     images: [
-      "/residence/1.jpg",
-      "/residence/2.jpg",
-      "/residence/3.jpg",
-      "/residence/4.jpg",
-      "/residence/5.jpg",
-      "/residence/6.jpg",
-      "/residence/7.jpg",
-      "/residence/8.jpg",
-      "/residence/9.jpg",
-      "/residence/10.jpg",
-      "/residence/11.jpg",
-      "/residence/12.jpg",
+      "/sea-mirror-villa/1.jpg",
+      "/sea-mirror-villa/2.jpg",
+      "/sea-mirror-villa/3.jpg",
+      "/sea-mirror-villa/4.jpg",
+      "/sea-mirror-villa/5.jpg",
+      "/sea-mirror-villa/6.jpg",
+      "/sea-mirror-villa/7.jpg",
+      "/sea-mirror-villa/8.jpg",
+      "/sea-mirror-villa/9.jpg",
+      "/sea-mirror-villa/13.jpg",
+      "/sea-mirror-villa/14.jpg",
+      "/sea-mirror-villa/15.jpg",
+      "/sea-mirror-villa/16.jpg",
+      "/sea-mirror-villa/17.jpg",
+      "/sea-mirror-villa/18.jpg",
+      "/sea-mirror-villa/19.jpg",
+      "/sea-mirror-villa/20.jpg",
     ],
     href: "/",
   },
@@ -222,15 +227,14 @@ export function SilimarProject() {
 
           <div className="text-white space-y-4 flex flex-col justify-center">
             <div>
-              <div className="text-2xl">Sea Mirror Residences</div>
-              <p>Jumeirah 2, Dubai</p>
+              <div className="text-2xl">Sea Mirror Villa</div>
+              <p>Jumeira Bay Island, Dubai</p>
             </div>
 
             <p className="font-thin">
-              Sea Mirror Residences is a high-end waterfront project by Lamar
-              Development on Jumeirah Bay Island. The masterplan includes an
-              intimate collection of ultra-luxury penthouses with generous
-              indoor and outdoor spaces
+              Sea Mirror is an exclusive seafront villa community located on
+              Jumeira Bay Island. The 18 unique private homes have been designed
+              by international award-winning architects and designers
             </p>
 
             <Link href={"#contact-form"} className="text-primary underline">

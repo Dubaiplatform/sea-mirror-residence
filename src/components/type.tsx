@@ -6,37 +6,26 @@ import { Button } from "./ui/button";
 
 const UNIT_TYPES = [
   {
-    category: "Sea Mirror Traveltine",
-    type: "4 Bedrooms",
+    category: "Penthouses",
+    type: "2 Bedrooms",
     size: "15,993 sq.ft.",
   },
   {
-    category: "Sea Mirror Copper",
-    type: "5 Bedrooms",
-    size: "13,217 sq.ft.",
+    category: "Penthouses",
+    type: "3 Bedrooms",
+    size: "15,993 sq.ft.",
   },
   {
-    category: "Sea Mirror Zinc",
-    type: "5 Bedrooms",
-    size: "13,969 sq.ft.",
-  },
-  {
-    category: "Sea Mirror Mahogany",
-    type: "5 Bedrooms",
-    size: "14,532 sq.ft.",
-  },
-
-  {
-    category: "Sea Mirror Marble",
-    type: "5 Bedrooms",
-    size: "16,366 sq.ft.",
+    category: "Penthouses",
+    type: "4 Bedrooms",
+    size: "15,993 sq.ft.",
   },
 ];
 
 const PAYMENT_PLAN = [
-  { title: "Down Payment", value: "10%" },
-  { title: "During Construction", value: "50%" },
-  { title: "Upon Handover in Q4, 2026", value: "40%" },
+  { title: "During Construction", value: "60%" },
+  { title: "On Handover", value: "40%" },
+  { title: "Handover", value: "2027" },
 ];
 
 const cardsWrap = {
@@ -88,14 +77,14 @@ export function Type() {
             {UNIT_TYPES.map((item, index) => (
               <motion.div
                 key={item.type}
-                className="grid grid-cols-5 items-center py-10 px-4 hover:bg-white/[0.03] transition-colors"
+                className="grid grid-cols-3 items-center py-10 px-4 hover:bg-white/[0.03] transition-colors"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {/* Name */}
-                <div className="col-span-2">
+                <div className="">
                   <p className="text-sm uppercase tracking-widest text-muted-foreground mb-1">
                     Unit Type
                   </p>
@@ -111,18 +100,18 @@ export function Type() {
                 </div>
 
                 {/* Size */}
-                <div>
+                {/* <div>
                   <p className="text-sm uppercase tracking-widest text-muted-foreground mb-1">
                     Size
                   </p>
                   <p className="text-xl">{item.size}</p>
-                </div>
+                </div> */}
 
                 {/* CTA */}
-                <div className="">
+                <div className="flex justify-center items-center">
                   <Link
                     href="#contact-form"
-                    className="inline-block border-b border-primary text-primary tracking-wide hover:opacity-80 transition"
+                    className="inline-block border-b border-primary text-primary tracking-wide hover:opacity-80 transition "
                   >
                     Price on Request
                   </Link>
@@ -153,11 +142,6 @@ export function Type() {
               </p>
               <p className="text-xl mb-4">{item.type}</p>
 
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
-                Size
-              </p>
-              <p className="mb-6 text-xl">{item.size}</p>
-
               <Link
                 href="#contact-form"
                 className="inline-block border-b border-primary text-primary tracking-wide"
@@ -170,7 +154,7 @@ export function Type() {
       </div>
 
       {/* Payment Plan */}
-      <div className="relative max-w-6xl mx-auto px-6 lg:px-8 mt-20">
+      {/* <div className="relative max-w-6xl mx-auto px-6 lg:px-8 mt-20">
         <motion.p
           className="text-lg  text-center text-primary uppercase mb-4"
           initial={{ opacity: 0, y: 20 }}
@@ -180,16 +164,6 @@ export function Type() {
         >
           Payment plan
         </motion.p>
-
-        {/* <motion.h2
-          className="text-3xl md:text-4xl lg:text-5xl text-center font-light mb-14"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          Exclusive Payment Plan
-        </motion.h2> */}
 
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-4"
@@ -202,7 +176,6 @@ export function Type() {
             <motion.div
               key={p.title}
               variants={cardItem}
-              // whileHover={{ y: -4 }}
               transition={{ duration: 0.2 }}
               className="border-[0.5px] border-primary  backdrop-blur-sm p-6"
             >
@@ -225,7 +198,7 @@ export function Type() {
             <Link href="#contact-form">Register Your Interest</Link>
           </Button>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

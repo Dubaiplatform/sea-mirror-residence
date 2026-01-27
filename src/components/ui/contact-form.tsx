@@ -94,12 +94,12 @@ export default function ContactForm() {
       email: formData.email,
       phone: formData.countryCode + formData.phone,
       bedrooms: formData?.bedrooms,
-      source: "Sea Mirror Villa",
+      source: "seamirrorresidence.com",
     };
 
     try {
       const res = await fetch(
-        "https://hooks.zapier.com/hooks/catch/15977350/uaxo39q/",
+        "https://hooks.zapier.com/hooks/catch/15977350/uqpeg0q/",
         {
           method: "POST",
           mode: "no-cors",

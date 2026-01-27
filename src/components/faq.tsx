@@ -10,41 +10,29 @@ import { motion } from "framer-motion";
 
 const faqs = [
   {
-    question: "Where is Sea Mirror located?",
+    question: "What is Sea Mirror Residences?",
     answer:
-      "Sea Mirror is located on Jumeirah Bay Island on the Dubai Water Canal and is connected to the entire city of Dubai through King Salman bin Abdulaziz Al Saud Street.",
+      "Sea Mirror Residences is an ultra-luxury waterfront development featuring 18 exclusive penthouses, designed for ultra-high-net-worth individuals seeking refined coastal living in Dubai",
   },
   {
-    question: "Is Sea Mirror good for investment?",
+    question: "Where is Sea Mirror Residences located?",
     answer:
-      "Given its prime location on the waterfront of the Dubai Water Canal, as well as the elevated lifestyle it promises, Sea Mirror constitutes a great investment for those who wish to add luxurious high-end real estate options to their portfolio.",
+      "The project is nestled along the Dubai Water Canal, offering panoramic views of the canal, the sea, and Dubai’s skyline, with seamless connectivity to key landmarks",
   },
   {
-    question: "Can a foreigner buy property in Sea Mirror?",
+    question: "What makes the design of Sea Mirror unique?",
     answer:
-      "Yes, foreigners can buy property in Sea Mirror. It is located in a freehold area, which means non-UAE nationals can own the property completely. This applies to both the villas and residences, making it a great option for international buyers who want to invest in Dubai.",
+      "Yes. With its prime canal-front location, limited number of residences, and world-class architectural pedigree, Sea Mirror represents a highly exclusive real estate investment opportunity",
   },
   {
-    question: "Is Sea Mirror a freehold property?",
+    question: "Is Sea Mirror suitable for investment?",
     answer:
-      "Yes, Sea Mirror is a freehold property. This means both locals and foreigners can fully own their homes and the land. Freehold ownership makes Sea Mirror more attractive for people looking for long-term investment or permanent residence in Dubai.",
-  },
-
-  {
-    question: "Which schools are located near Sea Mirror?",
-    answer:
-      "There are several highly rated schools near Sea Mirror. These include Horizon English School Dubai (British Curriculum), JSS Private School LLC (Indian Curriculum), Japanese School Dubai (Japanese Curriculum), and Al Ittihad Private School Jumeirah (American Curriculum).",
+      "Today, access is from the right side next to Eden House, the Canal, keeping arrival straightforward for residents and visitors. An RTA-approved access point is planned below the bridge after the U-turn, enhancing circulation. Views are considered, since units from the second floor onward sit above the bridge",
   },
   {
-    question: "What options are there for nurseries near Sea Mirror?",
+    question: "What lifestyle does Sea Mirror offer?",
     answer:
-      "Parents looking for nurseries near Sea Mirror can consider Blossom Downtown Nursery Dubai, Learning Tree Nursery, and Little Angel Nursery.",
-  },
-  {
-    question:
-      "What amenities can one expect at Sea Mirror, Jumeirah Bay Island?",
-    answer:
-      "Sea Mirror offers its residents a wide range of well-maintained amenities that include a balcony, a BBQ area, a private garage, a children’s play area, a shopping mall, a swimming pool, a sports court, 24/7 security, and a gym.",
+      "Sea Mirror offers a calm, private, and refined coastal lifestyle, combining urban accessibility with the tranquility of waterfront living",
   },
 ];
 

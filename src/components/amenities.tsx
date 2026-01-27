@@ -5,64 +5,92 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
-const section2 = [
-  {
-    title: "24/7 concierge services to attend to your every need",
-    icon: "",
-  },
-  {
-    title: "Expansive staff quarters for maids and drivers",
-    icon: "",
-  },
-  {
-    title:
-      "Personalize your interiors with our bespoke and custom handmade furniture package",
-    icon: "",
-  },
-  {
-    title:
-      "Excellent technical service packages to keep your home immaculate: landscaping, façade maintenance, etc",
-    icon: "",
-  },
-  {
-    title:
-      "Exceptional in-home service packages for effortless relaxation and luxury: maid's service, spa treatments, catering etc",
-    icon: "",
-  },
-  {
-    title:
-      "Direct access with complimentary membership to the entire BVLGARI Hotel and Resort",
-    icon: "",
-  },
-];
-
 const section1 = [
   {
-    title: "Indulge in luxury with personal wine cellar and cigar room",
+    title: "Beach access",
     icon: "",
   },
   {
-    title: "Relax completely with in-home spa facilities and treatments",
+    title: "Cigar lounge",
     icon: "",
   },
   {
-    title: "4 car underground parking showroom",
+    title: "Garden",
     icon: "",
   },
   {
-    title: "Private access to Jumeira Bay's waterfront",
+    title: "Gymnasium",
     icon: "",
   },
 
   {
-    title: "State-of-the-art kitchen appliances",
+    title: "High-speed internet",
     icon: "",
   },
   {
-    title:
-      "Entire home automation services for ultimate convenience and security",
+    title: "Infinity Pool",
     icon: "",
   },
+  {
+    title: "Kids club",
+    icon: "",
+  },
+  {
+    title: "Movie theater",
+    icon: "",
+  },
+  {
+    title: "Near hospital",
+    icon: "",
+  },
+  {
+    title: "Near park",
+    icon: "",
+  },
+  {
+    title: "Near school",
+    icon: "",
+  },
+  {
+    title: "Near shopping mall",
+    icon: "",
+  },
+  {
+    title: "Parking",
+    icon: "",
+  },
+  {
+    title: "Residents lounge area",
+    icon: "",
+  },
+  {
+    title: "Restaurant",
+    icon: "",
+  },
+  {
+    title: "Retail area",
+    icon: "",
+  },
+  {
+    title: "Spa",
+    icon: "",
+  },
+  {
+    title: "Standard pool",
+    icon: "",
+  },
+  {
+    title: "Video security",
+    icon: "",
+  },
+  {
+    title: "Wellness centre",
+    icon: "",
+  },
+  // {
+  //   title: "",
+  //   icon: "",
+  // },
 ];
 
 const containerVariants = {
@@ -102,86 +130,32 @@ export function Amenities() {
           <p className="text-lg  text-primary uppercase mb-4 ">
             World-Class Amenities
           </p>
-          <h2 className="text-2xl md:text-3xl font-light leading-tight tracking-tight text-center text-black">
-            Spacious lounge areas for lavish entertaining
-            <br className="" />A private oasis of verdant gardens and terraces
-            <br className="" />2 swimming pools for relaxing and lap swimming
-          </h2>
         </motion.div>
       </div>
 
-      <div className="md:mt-20">
-        <div className="">
-          <div className="grid md:grid-cols-2">
-            <div className="w-full aspect-square">
-              <Image
-                src={"/sea-mirror-villa/22.jpg"}
-                alt=""
-                width={800}
-                height={800}
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            <div className="flex justify-center items-center md:px-20 px-5 md:mt-0 sm:mt-10 mt-10">
-              <motion.div
-                className="grid grid-cols-1 text-black w-full gap-2  mx-auto"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-              >
-                {section1.map((amenity: any, index: number) => (
-                  <motion.article
-                    key={index}
-                    variants={itemVariants}
-                    className={`flex gap-2 `}
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    • <div>{amenity?.title}</div>
-                  </motion.article>
-                ))}
-              </motion.div>
-            </div>
-          </div>
-        </div>
-
-        <div className="md:mt-0 sm:mt-10 mt-10">
-          <div className="grid md:grid-cols-2 ">
-            {/* IMAGE — FIRST ON MOBILE */}
-            <div className="w-full aspect-square order-1 md:order-2">
-              <Image
-                src={"/sea-mirror-villa/32.jpg"}
-                alt=""
-                width={800}
-                height={800}
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* TEXT — SECOND ON MOBILE */}
-            <div className="flex justify-center items-center order-2 md:order-1 md:px-20 px-5 md:mt-0 sm:mt-10 mt-10">
-              <motion.div
-                className="grid text-black w-full grid-cols-1 gap-2 mx-auto"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-              >
-                {section2.map((amenity: any, index: number) => (
-                  <motion.article
-                    key={index}
-                    variants={itemVariants}
-                    className={`flex gap-2 `}
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    • <div>{amenity?.title}</div>
-                  </motion.article>
-                ))}
-              </motion.div>
-            </div>
+      <div className="md:mt-20 flex justify-center items-center">
+        <div className="md:w-[50%]">
+          <div className="flex justify-center items-center md:px-20 px-5 md:mt-0 sm:mt-10 mt-10">
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 
+             text-black max-w-xl mx-auto place-items-start"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              {section1.map((amenity: any, index: number) => (
+                <motion.article
+                  key={index}
+                  variants={itemVariants}
+                  className={`flex gap-2 `}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  • <div>{amenity?.title}</div>
+                </motion.article>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>

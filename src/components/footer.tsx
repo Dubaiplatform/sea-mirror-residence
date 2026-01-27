@@ -59,7 +59,8 @@ export function Footer() {
         transition={{ duration: 0.6, delay: 0.4 }}
       >
         <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Sea Mirror. All rights reserved.
+          &copy; {new Date().getFullYear()} Sea Mirror Residence. All rights
+          reserved.
         </p>
       </motion.div>
     </footer>
