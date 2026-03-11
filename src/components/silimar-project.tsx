@@ -237,7 +237,10 @@ export function SilimarProject() {
               by international award-winning architects and designers
             </p>
 
-            <Link href={"#contact-form"} className="text-primary underline">
+            <Link
+              href={"https://seamirrordubai.com/"}
+              className="text-primary underline"
+            >
               Learn More
             </Link>
           </div>

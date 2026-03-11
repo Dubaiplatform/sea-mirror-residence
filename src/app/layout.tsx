@@ -84,19 +84,40 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-P832RB78K6"
-        strategy="afterInteractive"
-      />
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-P832RB78K6"
+          strategy="afterInteractive"
+        />
 
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-P832RB78K6');
           `}
-      </Script>
+        </Script>
+
+        <Script
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "RealEstateAgent",
+              name: "Sea Mirror Residences",
+              url: "https://seamirrorresidence.com",
+              logo: "https://seamirrorresidence.com/favicon.ico",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Dubai",
+                addressCountry: "AE",
+              },
+            }),
+          }}
+        />
+      </head>
 
       <body className={`${poppins.variable} font-sans antialiased`}>
         {children}
