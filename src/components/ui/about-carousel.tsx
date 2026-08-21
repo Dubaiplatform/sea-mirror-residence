@@ -2,6 +2,8 @@
 // import { IconArrowNarrowRight } from "@tabler/icons-react";
 import React, { useEffect, useId, useRef, useState } from "react";
 
+import { trackEvent } from "../../lib/gtm";
+
 /* -------------------------------- Types -------------------------------- */
 interface SlideData {
   title: string;
@@ -13,10 +15,17 @@ interface SlideProps {
   index: number;
   current: number;
   handleSlideClick: (index: number) => void;
+  isClone?: boolean;
 }
 
 /* -------------------------------- Slide -------------------------------- */
-const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
+const Slide = ({
+  slide,
+  index,
+  current,
+  handleSlideClick,
+  isClone = false,
+}: SlideProps) => {
   const slideRef = useRef<HTMLLIElement>(null);
 
   const xRef = useRef(0);
@@ -54,7 +63,10 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
   const { src, title } = slide;
 
   return (
-    <div className="[perspective:1200px] [transform-style:preserve-3d]">
+    <div
+      className="[perspective:1200px] [transform-style:preserve-3d]"
+      aria-hidden={isClone || undefined}
+    >
       <li
         ref={slideRef}
         className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100
@@ -85,7 +97,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
           <img
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out"
             style={{ opacity: current === index ? 1 : 0.5 }}
-            alt={title}
+            alt={isClone ? "" : title}
             src={src}
             draggable={false}
           />
@@ -208,6 +220,7 @@ export function Carousel({ slides }: { slides: SlideData[] }) {
             key={index}
             slide={slide}
             index={index}
+            isClone={index < slideCount || index >= slideCount * 2}
             current={current + slideCount}
             handleSlideClick={(i) => {
               if (isMobile) {
@@ -227,12 +240,24 @@ export function Carousel({ slides }: { slides: SlideData[] }) {
           <CarouselControl
             type="previous"
             title="Go to previous slide"
-            handleClick={handlePreviousClick}
+            handleClick={() => {
+              trackEvent("gallery_interaction", {
+                gallery: "about",
+                action: "previous",
+              });
+              handlePreviousClick();
+            }}
           />
           <CarouselControl
             type="next"
             title="Go to next slide"
-            handleClick={handleNextClick}
+            handleClick={() => {
+              trackEvent("gallery_interaction", {
+                gallery: "about",
+                action: "next",
+              });
+              handleNextClick();
+            }}
           />
         </div>
       </div>

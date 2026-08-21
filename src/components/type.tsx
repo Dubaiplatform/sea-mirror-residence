@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import { trackCtaClick } from "../lib/gtm";
 
 const UNIT_TYPES = [
   {
@@ -112,6 +113,11 @@ export function Type() {
                   <Link
                     href="#contact-form"
                     className="inline-block border-b border-primary text-primary tracking-wide hover:opacity-80 transition "
+                    onClick={() =>
+                      trackCtaClick("price_on_request", "unit_table", {
+                        unit_type: item.type,
+                      })
+                    }
                   >
                     Price on Request
                   </Link>
@@ -133,18 +139,25 @@ export function Type() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="mb-4">
-                <p className="text-sm uppercase tracking-widest text-muted-foreground "></p>
+                <p className="text-sm uppercase tracking-widest text-muted-foreground mb-1">
+                  Unit Type
+                </p>
                 <p className="text-2xl font-light">{item.category}</p>
               </div>
 
               <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
-                Unit Type
+                Bedrooms
               </p>
               <p className="text-xl mb-4">{item.type}</p>
 
               <Link
                 href="#contact-form"
                 className="inline-block border-b border-primary text-primary tracking-wide"
+                onClick={() =>
+                  trackCtaClick("price_on_request", "unit_table_mobile", {
+                    unit_type: item.type,
+                  })
+                }
               >
                 Price on Request
               </Link>

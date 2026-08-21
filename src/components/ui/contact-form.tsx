@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
 import { countriesList } from "../country-list";
+import { trackEvent } from "../../lib/gtm";
 
 export default function ContactForm() {
   const countryRef = useRef<HTMLDivElement>(null);
@@ -87,7 +88,18 @@ export default function ContactForm() {
 
     setErrors(newErrors);
 
-    if (Object.values(newErrors).some(Boolean)) return;
+    if (Object.values(newErrors).some(Boolean)) {
+      trackEvent("form_submit_error", {
+        form_name: "register_interest",
+        error_fields: Object.entries(newErrors)
+          .filter(([, message]) => Boolean(message))
+          .map(([field]) => field)
+          .join(","),
+      });
+      return;
+    }
+
+    trackEvent("form_submit", { form_name: "register_interest" });
 
     const payload = {
       name: formData.name,
@@ -110,7 +122,11 @@ export default function ContactForm() {
         },
       );
 
-      // alert("Form submitted successfully");
+      trackEvent("generate_lead", {
+        form_name: "register_interest",
+        lead_source: "seamirrorresidence.com",
+      });
+
       setFormData({
         name: "",
         email: "",

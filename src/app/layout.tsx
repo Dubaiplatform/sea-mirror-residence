@@ -1,9 +1,11 @@
 import React from "react";
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Poppins } from "next/font/google";
 
 import "./globals.css";
+import { StructuredData } from "../components/structured-data";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "../lib/site-data";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -11,49 +13,49 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const PAGE_TITLE =
+  "Sea Mirror Residences on Dubai Water Canal, Jumeirah 2 | Lamar Development";
+
 export const metadata: Metadata = {
-  title: "Sea Mirror Residence | Lamar Development",
-  description:
-    "Sea Mirror Residence in Jumeirah 2 by Lamar Development, Dubai is a project that offers 4, and 5-bedrooms penthouses with modern interiors & amenities. Contact us to get more info",
+  title: PAGE_TITLE,
+  description: SITE_DESCRIPTION,
   keywords: [
-    "Sea Mirror Residence",
-    "Sea Mirror in Jumeirah",
+    "Sea Mirror Residences",
+    "Sea Mirror Jumeirah 2",
+    "Dubai Water Canal penthouses",
     "Lamar Development",
-    "Dubai project",
-    "Bay Island",
-    "5-bedroom",
-    "4-bedroom",
-    "luxury accommodation",
-    "wellness retreat",
+    "waterfront penthouses Dubai",
+    "2-bedroom penthouse Dubai",
+    "3-bedroom penthouse Dubai",
+    "4-bedroom penthouse Dubai",
+    "luxury canal front apartments",
   ],
   authors: [{ name: "Sea Mirror Residences | Lamar Development" }],
   creator: "Sea Mirror Residences | Lamar Development",
   publisher: "Sea Mirror Residences | Lamar Development",
-  alternates: { canonical: "https://seamirrorresidence.com/" },
+  alternates: { canonical: `${SITE_URL}/` },
   openGraph: {
-    title: "Sea Mirror Residences | Lamar Development",
-    description:
-      "Sea Mirror Residences in Jumeirah 2 by Lamar Development, Dubai is a project that offers 4, and 5-bedrooms penthouses with modern interiors & amenities. Contact us to get more info",
-    url: "",
-    siteName: "Sea Mirror Residences",
-    locale: "en_US",
+    title: PAGE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: `${SITE_URL}/`,
+    siteName: SITE_NAME,
+    locale: "en_AE",
     type: "website",
     images: [
       {
-        url: "https://seamirrorresidence.com/residence/3.jpg",
+        url: `${SITE_URL}/residence/3.jpg`,
         width: 1200,
         height: 630,
-        alt: "Sea Mirror Residences | Lamar Development",
+        alt: "Sea Mirror Residences waterfront penthouses on the Dubai Water Canal, Jumeirah 2",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Sea Mirror Residences | Lamar Development",
-    description:
-      "Sea Mirror Residences in Jumeirah 2 by Lamar Development, Dubai is a project that offers 4, and 5-bedrooms penthouses with modern interiors & amenities. Contact us to get more info",
-    images: ["https://seamirrorresidence.com/residence/3.jpg"],
+    title: PAGE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [`${SITE_URL}/residence/3.jpg`],
   },
   robots: {
     index: true,
@@ -85,41 +87,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-P832RB78K6"
-          strategy="afterInteractive"
-        />
-
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-P832RB78K6');
-          `}
-        </Script>
-
-        <Script
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "RealEstateAgent",
-              name: "Sea Mirror Residences",
-              url: "https://seamirrorresidence.com",
-              logo: "https://seamirrorresidence.com/favicon.ico",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Dubai",
-                addressCountry: "AE",
-              },
-            }),
-          }}
-        />
+        <StructuredData />
       </head>
 
+      <GoogleTagManager gtmId="GTM-WFDHML2B" />
+      <GoogleAnalytics gaId="G-KBG68CLEK2" />
+
       <body className={`${poppins.variable} font-sans antialiased`}>
+        {/* GTM noscript fallback (not rendered by @next/third-parties) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WFDHML2B"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         {children}
       </body>
     </html>

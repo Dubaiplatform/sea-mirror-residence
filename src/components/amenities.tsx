@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { trackCtaClick } from "../lib/gtm";
 
 const section1 = [
   {
@@ -165,6 +166,7 @@ export function Amenities() {
           <Link
             className="bg-black text-white hover:bg-primary/90  hover:text-white text-lg px-4 py-4"
             href="#contact-form"
+            onClick={() => trackCtaClick("download_brochure", "amenities")}
           >
             Download Brochure
           </Link>

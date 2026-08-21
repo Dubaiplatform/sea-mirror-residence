@@ -2,11 +2,13 @@
 
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { trackCtaClick } from "../../lib/gtm";
 
 export default function FloatingButton() {
   return (
     <motion.a
       href="#contact-form"
+      onClick={() => trackCtaClick("floating_enquire", "floating_button")}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4, ease: "easeOut" }}

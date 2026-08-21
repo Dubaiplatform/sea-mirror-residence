@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../components/ui/button";
 import { motion } from "framer-motion";
+import { trackCtaClick } from "../lib/gtm";
 
 export function Hero() {
   return (
@@ -18,7 +19,7 @@ export function Hero() {
       >
         <Image
           src="/residence/9.jpg"
-          alt="Harbour Resort - Luxury estate surrounded by lush green landscape"
+          alt="Sea Mirror Residences waterfront penthouses on the Dubai Water Canal at dusk"
           fill
           priority
           sizes="100vw"
@@ -43,7 +44,7 @@ export function Hero() {
         >
           Sea Mirror
           <br />
-          <span>Residence</span>
+          <span>Residences</span>
         </motion.h1>
 
         <motion.p
@@ -67,7 +68,12 @@ export function Hero() {
             size="lg"
             className="bg-white text-black hover:bg-white/90 px-8 py-6 text-base"
           >
-            <Link href="#about">Explore More</Link>
+            <Link
+              href="#about"
+              onClick={() => trackCtaClick("explore_more", "hero")}
+            >
+              Explore More
+            </Link>
           </Button>
         </motion.div>
       </div>

@@ -4,6 +4,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 
+import { trackCtaClick } from "../../lib/gtm";
+
 export default function ThankYouPage() {
   return (
     <main className="min-h-screen bg-black flex items-center justify-center px-6">
@@ -42,6 +44,7 @@ export default function ThankYouPage() {
           <Link
             href="/"
             className="px-8 py-3 text-sm tracking-wide uppercase border border-white/20 text-white hover:bg-white hover:text-black transition"
+            onClick={() => trackCtaClick("back_to_home", "thank_you_page")}
           >
             Back to Home
           </Link>

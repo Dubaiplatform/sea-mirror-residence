@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "../components/ui/button";
 import { motion } from "framer-motion";
 import { Carousel } from "./ui/about-carousel";
+import { trackCtaClick } from "../lib/gtm";
 
 const fadeInLeft: any = {
   initial: { opacity: 0, x: -40 },
@@ -24,51 +25,56 @@ export function Features() {
   const slideData = [
     {
       src: "/residence/1.jpg",
-      title: "Sea Mirror ",
+      title:
+        "Sea Mirror Residences living room with floor-to-ceiling canal views",
     },
     {
       src: "/residence/2.jpg",
-      title: "Sea Mirror ",
+      title:
+        "Entertaining space at Sea Mirror Residences penthouse, Dubai Water Canal",
     },
     {
       src: "/residence/3.jpg",
-      title: "Sea Mirror ",
+      title:
+        "Sea Mirror Residences exterior on the Dubai Water Canal, Jumeirah 2",
     },
     {
       src: "/residence/4.jpg",
-      title: "Sea Mirror ",
+      title:
+        "Penthouse interior in wood, glass and concrete at Sea Mirror Residences",
     },
     {
       src: "/residence/5.jpg",
-      title: "Sea Mirror ",
+      title:
+        "Sea Mirror Residences bedroom with 3.2m ceilings and waterfront outlook",
     },
     {
       src: "/residence/6.jpg",
-      title: "Sea Mirror ",
+      title: "Open-plan kitchen and dining area at Sea Mirror Residences",
     },
     {
       src: "/residence/7.jpg",
-      title: "Sea Mirror ",
+      title: "Sea Mirror Residences terrace overlooking the Dubai skyline",
     },
     {
       src: "/residence/8.jpg",
-      title: "Sea Mirror ",
+      title: "Bathroom finished in natural stone at Sea Mirror Residences",
     },
     {
       src: "/residence/9.jpg",
-      title: "Sea Mirror",
+      title: "Sea Mirror Residences waterfront facade at dusk, Jumeirah 2",
     },
     {
       src: "/residence/10.jpg",
-      title: "Sea Mirror",
+      title: "Panoramic canal views from a Sea Mirror Residences penthouse",
     },
     {
       src: "/residence/11.jpg",
-      title: "Sea Mirror",
+      title: "Double-height lobby entrance at Sea Mirror Residences",
     },
     {
       src: "/residence/12.jpg",
-      title: "Sea Mirror",
+      title: "Infinity pool and wellness amenities at Sea Mirror Residences",
     },
   ];
 
@@ -83,7 +89,7 @@ export function Features() {
           >
             <Image
               src="/residence/10.jpg"
-              alt="Luxurious hotel interior with panoramic views"
+              alt="Sea Mirror Residences penthouse interior with panoramic canal views"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -99,16 +105,21 @@ export function Features() {
               {" "}
               Jumeirah 2 canal front luxury apartments are built as a modern
               oasis with modest and serene coastal rhythm and movie-like frontal
-              light. The 12-meter 2-height lobby creates a glamorous entry
+              light. The 12-metre double-height lobby creates a glamorous entry
               point, and the 3.2m floor-to-ceiling height makes each room
-              spacious and seren
+              spacious and serene.
             </p>
 
             <Button
               asChild
               className="bg-white text-primary-foreground hover:bg-primary/90 hover:text-white"
             >
-              <Link href="#contact-form">Register Your Interest</Link>
+              <Link
+                href="#contact-form"
+                onClick={() => trackCtaClick("register_interest", "about")}
+              >
+                Register Your Interest
+              </Link>
             </Button>
           </motion.div>
         </div>

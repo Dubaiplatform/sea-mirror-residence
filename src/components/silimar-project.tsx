@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { trackCtaClick, trackEvent } from "../lib/gtm";
 
 /* ----------------------------------
    DATA
@@ -11,7 +12,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const offerings = [
   {
-    title: "Sea Mirror Residence",
+    title: "Sea Mirror Villa",
     location: "Jumeirah Bay Island",
     images: [
       "/sea-mirror-villa/1.jpg",
@@ -111,7 +112,7 @@ function ImageSlider({ images }: { images: string[] }) {
             <div className="relative w-full h-full cursor-grab active:cursor-grabbing">
               <Image
                 src={images[index]}
-                alt="Property image"
+                alt="Sea Mirror Villa seafront home on Jumeirah Bay Island"
                 fill
                 className="object-cover pointer-events-none select-none"
                 priority
@@ -132,7 +133,7 @@ function ImageSlider({ images }: { images: string[] }) {
             <div className="relative w-full h-full">
               <Image
                 src={images[getNextIndex()]}
-                alt="Next property image"
+                alt=""
                 fill
                 className="object-cover select-none"
                 draggable={false}
@@ -152,7 +153,7 @@ function ImageSlider({ images }: { images: string[] }) {
             <div className="relative w-full h-full">
               <Image
                 src={images[getPrevIndex()]}
-                alt="Previous property image"
+                alt=""
                 fill
                 className="object-cover select-none"
                 draggable={false}
@@ -183,14 +184,26 @@ function ImageSlider({ images }: { images: string[] }) {
 
       {/* Optional: Arrow Navigation */}
       <button
-        onClick={() => paginate(-1)}
+        onClick={() => {
+          trackEvent("gallery_interaction", {
+            gallery: "similar_projects",
+            action: "previous",
+          });
+          paginate(-1);
+        }}
         className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/50 text-white items-center justify-center hover:bg-black/70 transition"
         aria-label="Previous image"
       >
         {"<"}
       </button>
       <button
-        onClick={() => paginate(1)}
+        onClick={() => {
+          trackEvent("gallery_interaction", {
+            gallery: "similar_projects",
+            action: "next",
+          });
+          paginate(1);
+        }}
         className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/50 text-white items-center justify-center hover:bg-black/70 transition"
         aria-label="Next image"
       >
@@ -228,18 +241,27 @@ export function SilimarProject() {
           <div className="text-white space-y-4 flex flex-col justify-center">
             <div>
               <div className="text-2xl">Sea Mirror Villa</div>
-              <p>Jumeira Bay Island, Dubai</p>
+              <p>Jumeirah Bay Island, Dubai</p>
             </div>
 
             <p className="font-thin">
               Sea Mirror is an exclusive seafront villa community located on
-              Jumeira Bay Island. The 18 unique private homes have been designed
-              by international award-winning architects and designers
+              Jumeirah Bay Island. The 18 unique private homes have been
+              designed by international award-winning architects and designers
             </p>
 
             <Link
               href={"https://seamirrordubai.com/"}
               className="text-primary underline"
+              onClick={() =>
+                trackCtaClick(
+                  "similar_project_learn_more",
+                  "similar_projects",
+                  {
+                    destination: "seamirrordubai.com",
+                  },
+                )
+              }
             >
               Learn More
             </Link>

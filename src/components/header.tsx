@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#amenities", label: "Amenities" },
-  { href: "#about-developer", label: "About Developer" },
   { href: "#type", label: "Type" },
   { href: "#faq", label: "FAQ" },
 ];
@@ -45,7 +44,7 @@ export function Header() {
             >
               <Link href="/" className="">
                 <h2 className="text-2xl font-light  text-foreground">
-                  Sea Mirror Residence
+                  Sea Mirror Residences
                 </h2>
               </Link>
             </motion.div>

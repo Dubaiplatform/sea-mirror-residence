@@ -4,32 +4,33 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Quote, MapPin, X } from "lucide-react";
 import { motion } from "framer-motion";
+import { trackCtaClick } from "../lib/gtm";
 
 const nearbyLocations = [
   {
     title: "Jumeirah Beach",
-    distance: "5 mints",
+    distance: "5 mins",
   },
   {
     title: "Burj Khalifa",
-    distance: "12 mints",
+    distance: "12 mins",
   },
   {
     title: "Dubai International Airport",
-    distance: "20 mints",
+    distance: "20 mins",
   },
 
   {
     title: "Burj Al Arab",
-    distance: "26 mints",
+    distance: "15 mins",
   },
   {
     title: "Palm Jumeirah",
-    distance: "32 mints",
+    distance: "20 mins",
   },
   {
     title: "Dubai Marina",
-    distance: "35 mints",
+    distance: "25 mins",
   },
 ];
 
@@ -97,8 +98,9 @@ export function Area() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                Sea Mirror Dubai is located on Jumeirah Bay Island, offering
-                residents a rare blend of exclusivity and accessibility.
+                Sea Mirror Residences is located in Jumeirah 2, on the Dubai
+                Water Canal, offering residents a rare blend of exclusivity and
+                accessibility.
               </motion.p>
             </blockquote>
 
@@ -110,7 +112,10 @@ export function Area() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <button
-                onClick={() => setIsMapOpen(true)}
+                onClick={() => {
+                  trackCtaClick("view_map", "location");
+                  setIsMapOpen(true);
+                }}
                 className="inline-flex items-center justify-center px-10 py-4 border border-white text-white text-sm tracking-widest uppercase hover:bg-white hover:text-black transition-colors duration-300"
               >
                 View Map
@@ -134,8 +139,8 @@ export function Area() {
                 transition={{ duration: 0.4, ease: "easeOut" }}
               >
                 <Image
-                  src="/cummunity/2.webp"
-                  alt="Sea Mirror aerial view"
+                  src="/community/2.webp"
+                  alt="Aerial view of the Sea Mirror Residences site on the Dubai Water Canal, Jumeirah 2"
                   fill
                   className="object-cover"
                   sizes="100vw"
@@ -148,8 +153,8 @@ export function Area() {
                 transition={{ duration: 0.4, ease: "easeOut" }}
               >
                 <Image
-                  src="/cummunity/3.jpg"
-                  alt="Sea Mirror luxury residence"
+                  src="/community/3.jpg"
+                  alt="Sea Mirror Residences waterfront development beside the Dubai Water Canal"
                   fill
                   className="object-cover"
                   sizes="100vw"

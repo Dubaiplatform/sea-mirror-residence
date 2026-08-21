@@ -7,34 +7,8 @@ import {
   AccordionTrigger,
 } from "../components/ui/accordion";
 import { motion } from "framer-motion";
-
-const faqs = [
-  {
-    question: "What is Sea Mirror Residences?",
-    answer:
-      "Sea Mirror Residences is an ultra-luxury waterfront development featuring 18 exclusive penthouses, designed for ultra-high-net-worth individuals seeking refined coastal living in Dubai",
-  },
-  {
-    question: "Where is Sea Mirror Residences located?",
-    answer:
-      "The project is nestled along the Dubai Water Canal, offering panoramic views of the canal, the sea, and Dubai’s skyline, with seamless connectivity to key landmarks",
-  },
-  {
-    question: "What makes the design of Sea Mirror unique?",
-    answer:
-      "Yes. With its prime canal-front location, limited number of residences, and world-class architectural pedigree, Sea Mirror represents a highly exclusive real estate investment opportunity",
-  },
-  {
-    question: "Is Sea Mirror suitable for investment?",
-    answer:
-      "Today, access is from the right side next to Eden House, the Canal, keeping arrival straightforward for residents and visitors. An RTA-approved access point is planned below the bridge after the U-turn, enhancing circulation. Views are considered, since units from the second floor onward sit above the bridge",
-  },
-  {
-    question: "What lifestyle does Sea Mirror offer?",
-    answer:
-      "Sea Mirror offers a calm, private, and refined coastal lifestyle, combining urban accessibility with the tranquility of waterfront living",
-  },
-];
+import { FAQS as faqs } from "../lib/site-data";
+import { trackEvent } from "../lib/gtm";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -81,7 +55,19 @@ export function FAQ() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full"
+            onValueChange={(value) => {
+              if (value) {
+                const index = Number(value.replace("item-", ""));
+                trackEvent("faq_open", {
+                  faq_question: faqs[index]?.question,
+                });
+              }
+            }}
+          >
             {faqs.map((faq, index) => (
               <motion.div key={index} variants={itemVariants}>
                 <AccordionItem
@@ -91,7 +77,11 @@ export function FAQ() {
                   <AccordionTrigger className="text-left hover:cursor-pointer text-lg font-light  transition-colors py-4">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className=" leading-relaxed pb-4">
+                  {/* forceMount keeps answers in the server-rendered DOM so they are indexable */}
+                  <AccordionContent
+                    forceMount
+                    className=" leading-relaxed pb-4"
+                  >
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

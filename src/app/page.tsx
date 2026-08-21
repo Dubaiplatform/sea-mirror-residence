@@ -26,7 +26,7 @@ export default function Home() {
             className="absolute inset-0 bg-fixed bg-center bg-cover"
             style={{ backgroundImage: "url('/residence/3.jpg')" }}
             role="img"
-            aria-label="Iconic Burj Al Arab hotel in Dubai"
+            aria-label="Sea Mirror Residences on the Dubai Water Canal with views of the canal, sea and skyline"
           />
 
           {/* Dark overlay */}
@@ -53,7 +53,7 @@ export default function Home() {
             className="absolute inset-0 bg-fixed bg-center bg-cover"
             style={{ backgroundImage: "url('/residence/2.jpg')" }}
             role="img"
-            aria-label="Iconic Burj Al Arab hotel in Dubai"
+            aria-label="Elegant entertaining spaces inside a Sea Mirror Residences penthouse"
           />
 
           {/* Dark overlay */}
@@ -79,7 +79,7 @@ export default function Home() {
             className="absolute inset-0 bg-fixed bg-center bg-cover"
             style={{ backgroundImage: "url('/residence/11.jpg')" }}
             role="img"
-            aria-label="Iconic Burj Al Arab hotel in Dubai"
+            aria-label="Interior design in wood, glass and concrete at Sea Mirror Residences"
           />
 
           {/* Dark overlay */}
@@ -106,7 +106,7 @@ export default function Home() {
             className="absolute inset-0 bg-fixed bg-center bg-cover"
             style={{ backgroundImage: "url('/residence/1.jpg')" }}
             role="img"
-            aria-label="Iconic Burj Al Arab hotel in Dubai"
+            aria-label="Ultra high-end finishes and sustainable modern design at Sea Mirror Residences"
           />
 
           {/* Dark overlay */}

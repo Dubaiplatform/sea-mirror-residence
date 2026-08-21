@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://seamirrorresidence.com/sitemap.xml
+Sitemap: https://www.seamirrorresidence.com/sitemap.xml
