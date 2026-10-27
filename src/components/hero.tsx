@@ -44,7 +44,7 @@ export function Hero() {
         >
           Sea Mirror
           <br />
-          <span>Residences</span>
+          <span> Residences</span>
         </motion.h1>
 
         <motion.p

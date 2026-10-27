@@ -130,6 +130,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hide reCAPTCHA v3 badge (bottom-right) */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
 .map-dark iframe {
   filter: invert(90%) hue-rotate(180deg) brightness(90%) contrast(90%);
 }

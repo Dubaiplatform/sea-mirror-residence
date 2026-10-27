@@ -5,12 +5,15 @@ import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+
 import { countriesList } from "../country-list";
 import { trackEvent } from "../../lib/gtm";
 
 export default function ContactForm() {
   const countryRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [countrySearch, setCountrySearch] = useState("");
   const [isBedroomOpen, setIsBedroomOpen] = useState(false);
@@ -99,7 +102,13 @@ export default function ContactForm() {
       return;
     }
 
+    if (!executeRecaptcha) {
+      return;
+    }
+
     trackEvent("form_submit", { form_name: "register_interest" });
+
+    const recaptchaToken = await executeRecaptcha("register_interest");
 
     const payload = {
       name: formData.name,
@@ -107,6 +116,7 @@ export default function ContactForm() {
       phone: formData.countryCode + formData.phone,
       bedrooms: formData?.bedrooms,
       source: "seamirrorresidence.com",
+      recaptchaToken,
     };
 
     try {
@@ -352,6 +362,27 @@ export default function ContactForm() {
           >
             Submit
           </motion.button>
+          <p className="text-xs text-[#666] text-center mt-4">
+            This site is protected by reCAPTCHA and the Google{" "}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Privacy Policy
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://policies.google.com/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Terms of Service
+            </a>{" "}
+            apply.
+          </p>
         </div>
 
         {showThankYou && (

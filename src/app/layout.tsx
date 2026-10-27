@@ -4,6 +4,7 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Poppins } from "next/font/google";
 
 import "./globals.css";
+import { RecaptchaProvider } from "../components/recaptcha-provider";
 import { StructuredData } from "../components/structured-data";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "../lib/site-data";
 
@@ -87,6 +88,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link
+          rel="alternate"
+          type="text/plain"
+          href="/llms.txt"
+          title="LLM-readable site summary"
+        />
         <StructuredData />
       </head>
 
@@ -103,7 +110,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        {children}
+        <RecaptchaProvider>{children}</RecaptchaProvider>
       </body>
     </html>
   );

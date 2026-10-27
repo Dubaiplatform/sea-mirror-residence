@@ -1,4 +1,35 @@
 User-agent: *
 Allow: /
 
+# AI search and LLM crawlers — allow indexing for AI recommendations
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
 Sitemap: https://www.seamirrorresidence.com/sitemap.xml
+
+# Machine-readable project summary for AI systems
+# https://www.seamirrorresidence.com/llms.txt

@@ -1,5 +1,6 @@
 import {
   AMENITIES,
+  DEVELOPER_NAME,
   FAQS,
   GEO,
   SITE_DESCRIPTION,
@@ -28,11 +29,16 @@ const structuredData = {
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#developer`,
-      name: "Lamar Development",
+      name: DEVELOPER_NAME,
       url: SITE_URL,
       description:
         "Lamar Development is the developer behind Sea Mirror Residences, a waterfront penthouse community on the Dubai Water Canal in Jumeirah 2, Dubai.",
       address,
+      knowsAbout: [
+        "Sea Mirror Residences",
+        "Dubai Water Canal luxury penthouses",
+        "Jumeirah 2 real estate",
+      ],
     },
     {
       "@type": "RealEstateAgent",
@@ -70,14 +76,35 @@ const structuredData = {
       inLanguage: "en-AE",
     },
     {
+      "@type": "Place",
+      "@id": `${SITE_URL}/#place`,
+      name: "Sea Mirror Residences, Dubai Water Canal",
+      description:
+        "Canal-front luxury penthouse development in Jumeirah 2 on the Dubai Water Canal, Dubai, UAE.",
+      address,
+      geo,
+      containedInPlace: {
+        "@type": "Place",
+        name: "Jumeirah 2, Dubai",
+      },
+    },
+    {
       "@type": "ApartmentComplex",
       "@id": `${SITE_URL}/#residence`,
       name: SITE_NAME,
+      alternateName: [
+        "Sea Mirror Residences Dubai",
+        "Sea Mirror Residences Jumeirah 2",
+        "Sea Mirror canal penthouses",
+      ],
       url: SITE_URL,
       description:
         "Sea Mirror Residences is an ultra-luxury waterfront penthouse community on the Dubai Water Canal in Jumeirah 2, Dubai, by Lamar Development. 2-4 bedroom penthouses with 3.2m floor-to-ceiling heights, a 12-metre double-height lobby, infinity pool, spa and wellness centre.",
       address,
       geo,
+      containedInPlace: { "@id": `${SITE_URL}/#place` },
+      developer: { "@id": `${SITE_URL}/#developer` },
+      numberOfAccommodationUnits: UNIT_TYPES.length,
       image: [
         `${SITE_URL}/residence/1.jpg`,
         `${SITE_URL}/residence/2.jpg`,
